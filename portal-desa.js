@@ -24,7 +24,7 @@ const _enc = (str) => {
   return btoa(r);
 };
 
-const _RAW_URL = 'aHR0cHM6Ly9zY3JpcHQuZ29vZ2xlLmNvbS9tYWNyb3Mvcy9BS2Z5Y2J4TlBXZ1FpUXpOaFZHU2dkRWYxZGoyMnVNV05rRnhCbFoxc1hELTZQT25yV0FTR3JiZDdxMkRCeEFrVFQ5Z2EtVmpsQS9leGVj';
+const _RAW_URL = 'aHR0cHM6Ly9zY3JpcHQuZ29vZ2xlLmNvbS9tYWNyb3Mvcy9BS2Z5Y2J3b0lYVmFHZWczTWFNTXFYWkd3SGlMd1dGcTF5Q05YRlptZmhuakVoaU5fUGlCbGl1RGR2SkdrWkpUcHgxb0kySkxEZy9leGVj';
 // URL tetap sama, tapi disimpan dengan double obfuscation di runtime
 const SCRIPT_URL = (() => {
   const step1 = atob(_RAW_URL); // decode sekali
