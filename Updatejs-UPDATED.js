@@ -20,7 +20,7 @@ const _enc = (str) => {
 };
 
 // URL BACKEND BARU HASIL DEPLOY
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyzEJ1LwD9KTUPeItdFJjBbQG7ckVxLUB9X9zpdwgr5ArbrNpCJq1V9q2D4sI2nwWJOWw/exec';
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyAItaAYaKg-iIwEfAqW7UdZyd4L7u1fSyj5o6_q7aPxnGXBxSanck645uCVlPCvzj3jA/exec';
 
 const MOLAS_API_KEY = "MOLAS_API_2026_SECURE_9f8e7d6c5b4a3_!@#";
 const MOLAS_SECURE_HEADER = {
