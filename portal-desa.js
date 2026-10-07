@@ -6,7 +6,6 @@
 // ============================================
 const _dec = (str) => {
   try {
-    // Double layer: base64 + URI decode + reverse obfuscation
     let d = atob(str);
     // Reverse string trick
     d = d.split('').reverse().join('');
@@ -25,27 +24,13 @@ const _enc = (str) => {
 };
 
 const _RAW_URL = 'aHR0cHM6Ly9zY3JpcHQuZ29vZ2xlLmNvbS9tYWNyb3Mvcy9BS2Z5Y2J3b0lYVmFHZWczTWFNTXFYWkd3SGlMd1dGcTF5Q05YRlptZmhuakVoaU5fUGlCbGl1RGR2SkdrWkpUcHgxb0kySkxEZy9leGVj';
-// URL tetap sama, tapi disimpan dengan double obfuscation di runtime
 const SCRIPT_URL = (() => {
-  const step1 = atob(_RAW_URL); // decode sekali
+  const step1 = atob(_RAW_URL); 
   return step1;
 })();
 
-
-/* =============================================================================
-   FRONTEND PORTAL DESA MOLOMPAR ATAS - V5.6 FINAL SECURE SHOW/HIDE
-   FULLY SYNCHRONIZED WITH BACKEND V5.5 SUPER SECURE HARDENED ENGINE
-   - API_KEY: MOLAS_API_2026_SECURE_9f8e7d6c5b4a3_!@#
-   - SCRIPT_URL: https://script.google.com/macros/s/AKfycbxNPWgQiQzNhVGSgdEf1dj22uMWNkFxBlZ1sXD-6POnrWASGrbd7q2DBxAkTT9ga-VjlA/exec (base64 obfuscated)
-   - DUAL TOKEN: Admin (120m) + Warga (30m) HMAC-SHA256
-   - SECURE_FETCH: Auto inject api_key + token sesuai kategori aksi
-   - BACKEND ACTIONS: 30 actions (PUBLIC 5, WARGA 3, ADMIN 22) - ALL COVERED
-   - SECURITY: Timing-safe, IDOR protection, Rate-limit compatible
-   =============================================================================
-*/
-
 const MOLAS_API_KEY = "MOLAS_API_2026_SECURE_9f8e7d6c5b4a3_!@#";
-const MOLAS_SECURE_HEADER = { // V5.1 DUAL
+const MOLAS_SECURE_HEADER = { 
   get warga_token() { return localStorage.getItem('molas_warga_token') || ''; },
 
   get api_key() { return MOLAS_API_KEY; },
@@ -103,8 +88,6 @@ const secureFetch = async (url, options = {}) => {
   options.redirect = options.redirect || 'follow';
   return fetch(finalUrl, options);
 };
-
-// Helper untuk BLT yang sekarang wajib pakai warga token
 const originalShowBLTPopup = typeof showBLTPopup !== 'undefined' ? showBLTPopup : null;
 
 
